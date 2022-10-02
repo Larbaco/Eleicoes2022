@@ -32,6 +32,7 @@ def atualiza():
     df_eleicao = pd.DataFrame(list(zip(candidato,votos,porcentagem)), columns=['Candidato','Numero de Votos','Porcentagem'])
     print(df_eleicao)
     print('diferença '+str(float(json_data['cand'][0]['pvap'].replace(',','.'))-float(json_data['cand'][1]['pvap'].replace(',','.')))+'%')
+    print('Falta '+str(50-float(json_data['cand'][0]['pvap'].replace(',','.')))+' % para ser eleito em 1 turno' )
     return json_data['ht']
 ultima= ''
 #hora = carrega_Hora()
