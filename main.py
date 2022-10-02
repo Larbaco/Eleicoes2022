@@ -21,7 +21,6 @@ def atualiza():
     print('Total Apurado: '+json_data['pst']+' %')
     print('Quantidade total de votos apurados: '+json_data['c'])
     for info in json_data['cand']:
-        #if info['seq'] in [1,2,3,4,5,6,7]:
         if(info['nm'] == 'JAIR BOLSONARO'):
             candidato.append('Jair Genocida Bozonaro')
         else:
@@ -32,6 +31,7 @@ def atualiza():
 
     df_eleicao = pd.DataFrame(list(zip(candidato,votos,porcentagem)), columns=['Candidato','Numero de Votos','Porcentagem'])
     print(df_eleicao)
+    print('diferença '+str(float(json_data['cand'][0]['pvap'].replace(',','.'))-float(json_data['cand'][1]['pvap'].replace(',','.')))+'%')
     return json_data['ht']
 ultima= ''
 #hora = carrega_Hora()
